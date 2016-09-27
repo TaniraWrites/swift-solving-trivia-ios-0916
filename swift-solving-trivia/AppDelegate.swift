@@ -14,16 +14,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     
+    
     func solveTrivia(_ trivia: [String : String]) -> String {
+        var answerToTriva : String = " "
+        for (state,capital) in trivia{
+            
+            let stateCharacters: [Character] = [Character](state.lowercased().characters)
+            let capitalCharacters = [Character](capital.lowercased().characters)
+            
+            
+           
+            
         
-        // Implement this function!
+            for (a,b) in stateCharacters.enumerated(){
+                if capitalCharacters.contains(b){
+                    break
+                }
+                if stateCharacters.count - 1 == a{
+                    answerToTriva = state
+                }
+                
+            }
+            
+        }
         
-        return "Hi :D"
-        
+        return answerToTriva
     }
     
     
     
+
     
-}
+        
+    
+    }
+    
+
+    
+
 
